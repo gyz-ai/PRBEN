@@ -22,9 +22,9 @@ The basic statistics of PRBEN dataset shows as follow:
 
 ## Data Content and Format
 The dataset is provided in .tar.gz format and can be decompressed using the following command:
-After decompression, the folder PRBEN will contain two files: user_data.jsonl and data_gold_target.jsonl.
+After decompression, the folder PRBEN will contain three files: user_data.jsonl , data_gold_target.jsonl and prompt.py.
 
-### (1)user_data.jsonl
+### (1) user_data.jsonl
 This file contains the user information, user_id, query, click_url, long_history_querys, gender, age, province.The format of each line of data in this file is：
 
 ```json
@@ -38,7 +38,7 @@ This file contains the user information, user_id, query, click_url, long_history
 - age: the user’s age range.  
 - province: the user’s location (province).
   
-### (2)data_gold_target.jsonl
+### (2) data_gold_target.jsonl
 
 This file contains the gold document set for the retrieval stage and the gold answers with corresponding keywords for the generation stage.  
 The format of each line of data in this file is：
@@ -49,7 +49,12 @@ The format of each line of data in this file is：
 - gold_docs: the set of gold documents for the retrieval stage.  
 - gold_answer: the gold answer for the generation stage.  
 - gold_keywords: the keywords associated with the gold answer.
-
+  
+### (3) prompt.py
+The prompt.py file encapsulates the key prompts employed in both the personalized retrieval and personalized generation stages. These prompts are crucial for guiding the model to:
+- Personalized Retrieval – adapt the search process based on the user’s historical interactions and preferences.
+- Personalized Generation – generate responses that are aligned with the user’s intent and personalized context.
+  
 ## Corpus
 This corpus contains 2,341,338 base documents, all sourced from real online Baidu links. The documents are stored in the following format:
 ```json
