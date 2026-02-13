@@ -3,6 +3,15 @@ Personalized RAG in the Wild: Benchmarking Personalized RAG with Authentic User 
 # Introduction
 # Dataset Statistics
 The basic statistics of PRBEN dataset shows as follow:
+| Statistic                     | Value                     |
+|--------------------------------|---------------------------|
+| Sample size                    | 800                       |
+| History query length (range)   | 2–493                     |
+| History query length (average) | 194                       |
+| Gender distribution            | Female: 49.11%; Male: 50.89% |
+| Age range                      | 0–65+                     |
+| Number of provinces            | 31                        |
+
 
 # Data Content and Format
 ## user_data.jsonl
