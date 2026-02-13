@@ -62,6 +62,7 @@ The corpus can be downloaded from the following Hugging Face URL:
 
 ## Baseline models
 We evaluated several open-source and closed-source models on our benchmark.
+The following presents a subset of our results：
 
 | Method(Personalized Retrieval) | Recall | MRR    | NDCG   | MAP    | Relevance |
 |--------------------------------|--------|--------|--------|--------|-----------|
@@ -78,7 +79,8 @@ We evaluated several open-source and closed-source models on our benchmark.
 | DeepSeek-R1                     | 0.2846 | 0.5085 | 0.3143 | 0.2179 | 0.1964    |
 | Qwen-2.5-7B-Instruct-SFT        | 0.2897 | 0.5159 | 0.3190 | 0.2219 | 0.2009    |
 
-Additionally, we assessed the models’ performance on the entire end-to-end pipeline.
+Additionally, we evaluated the models’ performance on the complete end-to-end pipeline.
+The following presents a subset of our results：
 
 | Method | BLEU    | ROUGE-L  | PGDC     | PTC      | Faithfulness | Factuality |
 |--------|---------|----------|----------|----------|--------------|------------|
@@ -86,6 +88,7 @@ Additionally, we assessed the models’ performance on the entire end-to-end pip
 | qw (P-P)     | 0.0549 | 0.1883 | 0.5601 | 0.2997 | 0.6697 | 0.5672 |
 | gemini (P-P) | 0.1315 | 0.2686 | 0.7556 | 0.5697 | 0.6123 | 0.8060 |
 
+<img width="700" height="250" alt="3151770979516_ pic" src="https://github.com/user-attachments/assets/e6ebb75e-ae4f-4c33-9806-bedf88685d6c" />
 
 
   
