@@ -28,13 +28,26 @@ This file contains the user information, user_id, query, click_url, long_history
 - gender: the user’s gender.  
 - age: the user’s age range.  
 - province: the user’s location (province).
-- 
-## (3)data_gold_target.jsonl
+  
+## (2)data_gold_target.jsonl
 
 This file contains the gold document set for the retrieval stage and the gold answers with corresponding keywords for the generation stage.  
 The format of each line of data in this file is：
+```json
+{"user_id": ,"gold_docs": ,"gold_answer": ,"gold_keywords":  }
+```
+- user_id: the anonymized PRBEN ID of the user.
+- gold_docs: the set of gold documents for the retrieval stage.  
+- gold_answer: the gold answer for the generation stage.  
+- gold_keywords: the keywords associated with the gold answer.
 
-
+## (3).jsonl
+```json
+{"id": ,"contents"": }
+```
+- id: the ID of the document in the text corpus.
+- contents: the textual content of the document.
+  
 ## License
 This repository is liciensed under Apache-2.0 License.
 
