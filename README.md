@@ -21,8 +21,7 @@ The basic statistics of PRBEN dataset shows as follow:
 
 
 ## Data Content and Format
-The dataset is provided in .tar.gz format and can be decompressed using the following command:
-After decompression, the folder PRBEN will contain three files: user_data.jsonl , data_gold_target.jsonl and prompt.py.
+The folder PRBEN will contain three files: user_data.jsonl , data_gold_target.jsonl and prompt.py.
 
 ### (1) user_data.jsonl
 This file contains the user information, user_id, query, click_url, long_history_querys, gender, age, province.The format of each line of data in this file is：
@@ -69,9 +68,9 @@ The corpus can be downloaded from the following Hugging Face URL:
 We evaluated several open-source and closed-source models on our benchmark.
 The following presents a subset of our results：
 
-| Method(Personalized Retrieval) | Recall | MRR    | NDCG   | MAP    | Relevance |
+|Personalized Retrieval | Recall | MRR    | NDCG   | MAP    | Relevance |
 |--------------------------------|--------|--------|--------|--------|-----------|
-| **Long History ** |        |        |        |        |           |
+| **Long History** |        |        |        |        |           |
 | Gemini-1.5-Pro                  | 0.2430 | 0.4538 | 0.2685 | 0.1776 | 0.2005    |
 | DeepSeek-R1                     | 0.2200 | 0.4046 | 0.2424 | 0.1645 | 0.1756    |
 | Qwen-2.5-7B-Instruct-SFT        | 0.2279 | 0.4226 | 0.2506 | 0.1677 | 0.1770    |
