@@ -21,7 +21,14 @@ This file contains the user information, user_id, query, click_url, long_history
 ```json
 {"user_id": ,"query": ,"click_url": ,"long_history_query": ,"gender": ,"age": ,"province": }
 ```
-
+- user_id: the anonymized PRBEN ID of the user.
+- query: the user’s current query.
+- click_url: the URLs clicked by the user for the current query.
+- long_history_query: the user’s long-term historical queries.
+- gender: the user’s gender.  
+- age: the user’s age range.  
+- province: the user’s location (province).
+- 
 ## (3)data_gold_target.jsonl
 
 This file contains the gold document set for the retrieval stage and the gold answers with corresponding keywords for the generation stage.  
