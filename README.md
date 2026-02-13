@@ -62,24 +62,23 @@ The corpus can be downloaded from the following Hugging Face URL:
 
 ## Baseline models
 We evaluated several open-source and closed-source models on our benchmark.
-| Method                         | Recall | MRR    | NDCG   | MAP    | Relevance |
+
+| Method(Personalized Retrieval) | Recall | MRR    | NDCG   | MAP    | Relevance |
 |--------------------------------|--------|--------|--------|--------|-----------|
-| **Personalized Retrieval（Long History  ）**      |        |        |        |        |           |
+| **Long History ** |        |        |        |        |           |
 | Gemini-1.5-Pro                  | 0.2430 | 0.4538 | 0.2685 | 0.1776 | 0.2005    |
 | DeepSeek-R1                     | 0.2200 | 0.4046 | 0.2424 | 0.1645 | 0.1756    |
 | Qwen-2.5-7B-Instruct-SFT        | 0.2279 | 0.4226 | 0.2506 | 0.1677 | 0.1770    |
-| **Personalized Retrieval（Short History  ）**      |        |        |        |        |           |
+| **Short History** |        |        |        |        |           |
 | Gemini-1.5-Pro                  | 0.2769 | 0.5153 | 0.3076 | 0.2092 | 0.2129    |
 | DeepSeek-R1                     | 0.2664 | 0.4807 | 0.2924 | 0.2008 | 0.2041    |
 | Qwen-2.5-7B-Instruct-SFT        | 0.2884 | 0.5066 | 0.3163 | 0.2200 | 0.1901    |
-| **Personalized Retrieval（Long + Short History  ）**      |        |        |        |        |           |
+| **Long + Short History** |        |        |        |        |           |
 | Gemini-1.5-Pro                  | 0.2780 | 0.5111 | 0.3081 | 0.2106 | 0.2148    |
 | DeepSeek-R1                     | 0.2846 | 0.5085 | 0.3143 | 0.2179 | 0.1964    |
 | Qwen-2.5-7B-Instruct-SFT        | 0.2897 | 0.5159 | 0.3190 | 0.2219 | 0.2009    |
 
 Additionally, we assessed the models’ performance on the entire end-to-end pipeline.
-
-## End-to-End Evaluation Results (All Values Rounded to 4 Decimal Places)
 
 | Method | BLEU    | ROUGE-L  | PGDC     | PTC      | Faithfulness | Factuality |
 |--------|---------|----------|----------|----------|--------------|------------|
