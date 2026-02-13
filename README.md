@@ -12,4 +12,4 @@ This file contains the user information, user_id, query, click_url, history_quer
 ## data_gold_target.jsonl
 
 This file contains the gold document set for the retrieval stage and the gold answers with corresponding keywords for the generation stage.  
-Each line in this file follows the format:
+The format of each line of data in this file is：
