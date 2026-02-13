@@ -19,15 +19,7 @@ The basic statistics of PRBEN dataset shows as follow:
 This file contains the user information, user_id, query, click_url, long_history_querys, gender, age, province.The format of each line of data in this file is：
 
 ```json
-{
-  "user_id": ,
-  "query": ,
-  "click_url": ,
-  "long_history_query": ,
-  "gender": ,
-  "age": ,
-  "province": 
-}
+{"user_id": ,"query": ,"click_url": ,"long_history_query": ,"gender": ,"age": ,"province": }
 ```
 
 ## (3)data_gold_target.jsonl
