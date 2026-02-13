@@ -2,6 +2,9 @@
 Personalized RAG in the Wild: Benchmarking Personalized RAG with Authentic User Behavioral Signals
 ## Introduction
 We introduce PRBEN, a new benchmark based on the popular Chinese search engine Baidu.com. PRBEN includes 800 users, whose historical queries, click logs, and profile information were collected over a three-month period from July 1 to September 30, 2025. In this dataset, we record users’ real queries and all clicked URLs along with their associated attributes, covering diverse topics and query types. Using our construction method, we generated a gold-standard reference that reflects users’ personalized needs, providing an evaluable benchmark for research on personalized retrieval and generation methods.
+<p align="center">
+<img src="https://github.com/user-attachments/assets/00dddcdc-f388-4455-90ac-d170e3932e31" width="600" height="320" />
+</p>
 
 The dataset is derived from anonymized search logs. To protect user privacy, we applied 𝑘-anonymity filtering (k=5) and masked all personally identifiable information (PII) using named entity recognition (NER). The dataset is released under a strict research-only license, and any attempts to re-identify users are strictly prohibited.
 
