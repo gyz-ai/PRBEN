@@ -27,7 +27,8 @@ This file contains the user information, user_id, query, click_url, long_history
   "gender": "男",
   "age": "35-44",
   "province": "河北省"
-}```
+}
+```
 
 ## data_gold_target.jsonl
 
