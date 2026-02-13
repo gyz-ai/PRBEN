@@ -20,23 +20,13 @@ This file contains the user information, user_id, query, click_url, long_history
 
 ```json
 {
-  "user_id": "prben_id_0005",
-  "query": "甲骨文",
-  "click_url": [
-    "http://www.oracle.com/index.html"
-  ],
-  "long_history_query": [
-    "甲骨文",
-    "宁晋县雄达机械有限公司",
-    "火影忍者720集全集免费版",
-    "火影忍者",
-    "寻秦记 2018 陈翔",
-    "《寻秦记》电视剧",
-    "...(省略若干条历史查询)..."
-  ],
-  "gender": "男",
-  "age": "35-44",
-  "province": "河北省"
+  "user_id": ,
+  "query": ,
+  "click_url": ,
+  "long_history_query": ,
+  "gender": ,
+  "age": ,
+  "province": 
 }
 ```
 
@@ -48,6 +38,7 @@ The format of each line of data in this file is：
 
 ## License
 This repository is liciensed under Apache-2.0 License.
+
 The PRBEN benchmark is liciensed under CC BY-NC-SA 4.0.
 
 ## FQA
