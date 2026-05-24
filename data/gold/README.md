@@ -7,7 +7,7 @@ Maps each anonymized ID to its golden relevant documents.
 ```json
 {
   "id": "prben_id_00001",
-  "docs_list": ["doc1","doc2"]
+  "docs_list": ["doc1","doc2",···]
 }
 ```
 
