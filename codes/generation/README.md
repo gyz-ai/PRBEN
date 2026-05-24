@@ -96,4 +96,4 @@ Each output sample is formatted as:
 ```
 
 ---
-
+You can easily enable or disable different personalized features (e.g., user profile, search history, behavioral signals) by simply commenting or uncommenting the corresponding code sections.
