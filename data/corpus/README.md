@@ -1,6 +1,6 @@
-# Document Corpus
+# PRBEN Corpus
 
-This folder contains document shards for BM25 indexing.
+This dataset contains document shards for BM25 / RAG retrieval.
 
 ## Format
 
@@ -10,6 +10,6 @@ Each line is a JSON object:
 
 ## Usage
 
-Run:
-
-bash scripts/build_bm25_index.sh
+```python
+from datasets import load_dataset
+dataset = load_dataset("prben-ai/PRBEN")
