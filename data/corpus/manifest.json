@@ -1,7 +1,57 @@
 {
   "dataset": "PRBEN",
+  "task": "Personalized Retrieval-Augmented Generation Benchmark",
+
+  "version": "1.0",
+
   "format": "jsonl",
   "field": "contents",
-  "num_shards": 2,
-  "storage": "HF / external download recommended"
+
+  "corpus": {
+    "num_docs": 4074085,
+    "num_shards": 2,
+    "shard_pattern": "shard_*.jsonl",
+    "scale": "4M+ documents",
+    "compression": "none"
+  },
+
+  "splits": {
+    "corpus": "doc_files/",
+    "train": null,
+    "dev": null,
+    "test": null
+  },
+
+  "schema": {
+    "id": "string",
+    "contents": "string"
+  },
+
+  "storage": {
+    "location": "HuggingFace Datasets Hub",
+    "access": "public",
+    "download": "load_dataset('prben-ai/PRBEN')"
+  },
+
+  "indexing": {
+    "tool": "pyserini",
+    "engine": "lucene",
+    "command": "bash scripts/build_bm25_index.sh",
+    "store_positions": true,
+    "store_docvectors": true,
+    "store_raw": true
+  },
+
+  "reproducibility": {
+    "index_required": true,
+    "note": "Index must be built from sharded JSONL corpus using Pyserini LuceneCollection."
+  },
+
+  "stats": {
+    "num_docs": 4074085,
+    "scale_level": "million-scale",
+    "approx_size": "multi-GB corpus"
+  },
+
+  "notes": "Large-scale corpus (4M+ documents) for BM25 and personalized RAG evaluation. Data is released in sharded JSONL format for efficient indexing and streaming."
 }
