@@ -5,8 +5,12 @@ We introduce PRBEN, a new benchmark based on the popular Chinese search engine. 
 <!-- <p align="center">
 <img src="https://github.com/user-attachments/assets/3619af74-d323-46da-ad7b-60a0953d1c56" width="600" height="320" />
 </p> -->
-<img width="2226" height="1013" alt="PRBEN" src="https://github.com/user-attachments/assets/10a87630-5a6c-4cf1-9302-edebe50bc379" />
-
+<!-- <p align="center">
+<img src="https://github.com/user-attachments/assets/3619af74-d323-46da-ad7b-60a0953d1c56" width="600" height="320" />
+</p> -->
+<p align="center">
+<img width="800" height="400" alt="PRBEN" src="https://github.com/user-attachments/assets/10a87630-5a6c-4cf1-9302-edebe50bc379" />
+</p>
 
 
 The dataset is derived from anonymized search logs. To protect user privacy, we applied 𝑘-anonymity filtering (k=5) and masked all personally identifiable information (PII) using named entity recognition (NER). The dataset is released under a strict research-only license, and any attempts to re-identify users are strictly prohibited.
