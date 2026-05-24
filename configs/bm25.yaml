@@ -1,0 +1,34 @@
+# =====================================================
+# BM25 Index Configuration
+# =====================================================
+
+dataset:
+  name: PRBEN
+  version: v1
+  description: Personalized RAG benchmark dataset
+
+paths:
+  input: data/corpus/doc_files
+  index: data/index/bm25
+  output: data/retrieval/bm25_results.jsonl
+
+index:
+  collection: JsonCollection
+  generator: DefaultLuceneDocumentGenerator
+
+bm25:
+  k1: 0.9
+  b: 0.4
+
+store:
+  positions: true
+  docvectors: true
+  raw: true
+
+runtime:
+  threads: 16
+  batch_size: 128
+
+retrieval:
+  topk: 100
+  score_cutoff: null
