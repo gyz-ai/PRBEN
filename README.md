@@ -13,12 +13,12 @@ The dataset is derived from anonymized search logs. To protect user privacy, we 
 The basic statistics of PRBEN dataset shows as follow:
 | Statistic                     | Value                     |
 |--------------------------------|---------------------------|
-| Sample size                    | 800                       |
-| History query length (range)   | 2–493                     |
-| History query length (average) | 194                       |
-| Gender distribution            | Female: 49.11%; Male: 50.89% |
+| Sample size                    | 10408                      |
+| History query length (range)   | 2–823                    |
+| History query length (average) | 211                      |
+| Gender distribution            | Female: 54.80%; Male: 45.20% |
 | Age range                      | 0–65+                     |
-| Number of provinces            | 31                        |
+| Number of provinces/regions      | 32                        |
 
 
 ## Data Content and Format
