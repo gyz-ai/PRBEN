@@ -79,13 +79,29 @@ Fields:
 - `contents`: Document text
 
 
+<br>
+
+---
+
+<br>
+
+# Personalized Query Rewrite Prompt Construction
+
+This module constructs personalized query rewrite prompts for large language models (e.g., GPT-4.1, Qwen, Claude).
+
+The prompts are generated based on:
+- User recent search history
+- User long-term search interests
+- User profile attributes
+
+The framework is highly extensible. Different personalized features can be easily enabled or disabled by modifying the corresponding code sections.
+
+The top-5 historical records can be obtained using your own retrieval strategy or semantic similarity methods, and the generated prompts can then be applied to any target large language model for evaluation.
+
 ---
 
 
-
-# Personalized Query Rewrite Prompt Construction This module constructs personalized query rewrite prompts for large language models (e.g., GPT-4.1, Qwen, Claude). The prompts are generated based on: - User recent search history - User long-term search interests - User profile attributes The framework is highly extensible. Different personalized features can be easily enabled or disabled by modifying the corresponding code sections. The top-5 historical records can be obtained using your own retrieval strategy or semantic similarity methods, and the generated prompts can then be applied to any target large language model for evaluation. ---
-
-# Input Format
+## Input Format
 
 Each line in the input file should be a JSON object:
 
@@ -110,7 +126,7 @@ Each line in the input file should be a JSON object:
 
 ---
 
-# Build Personalized Rewrite Prompts
+## Build Personalized Rewrite Prompts
 
 Run:
 
@@ -123,9 +139,9 @@ python scripts/build_rewrite_prompt.py \
 
 ---
 
-# Output Files
+## Output Files
 
-## Prompt File
+### Prompt File
 
 ```json
 {
@@ -136,7 +152,7 @@ python scripts/build_rewrite_prompt.py \
 }
 ```
 
-## ID-Prompt Mapping File
+### ID-Prompt Mapping File
 
 ```json
 {
@@ -147,13 +163,3 @@ python scripts/build_rewrite_prompt.py \
 
 ---
 
-# Feature Ablation
-
-You can easily enable or disable different personalized features by modifying the corresponding code sections, including:
-- Recent search history
-- Long-term interests
-- User profile information
-
-This design supports flexible ablation experiments for personalized retrieval and personalized query rewriting research.
-
----
