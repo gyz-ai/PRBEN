@@ -77,3 +77,83 @@ Fields:
 
 - `id`: Document identifier
 - `contents`: Document text
+
+
+---
+
+
+
+# Personalized Query Rewrite Prompt Construction This module constructs personalized query rewrite prompts for large language models (e.g., GPT-4.1, Qwen, Claude). The prompts are generated based on: - User recent search history - User long-term search interests - User profile attributes The framework is highly extensible. Different personalized features can be easily enabled or disabled by modifying the corresponding code sections. The top-5 historical records can be obtained using your own retrieval strategy or semantic similarity methods, and the generated prompts can then be applied to any target large language model for evaluation. ---
+
+# Input Format
+
+Each line in the input file should be a JSON object:
+
+```json
+{
+  "id": "1",
+  "query": "小米",
+  "long_history": [
+    "大众汽车",
+    "特斯拉Model Y",
+    "新能源汽车"
+  ],
+  "top_5_long_history": [
+    "比亚迪汉",
+    "蔚来ES6"
+  ],
+  "province": "北京",
+  "age": "25",
+  "gender": "男"
+}
+```
+
+---
+
+# Build Personalized Rewrite Prompts
+
+Run:
+
+```bash
+python scripts/build_rewrite_prompt.py \
+  --input_file data/queries/test.jsonl \
+  --output_file data/prompts/rewrite_prompt.jsonl \
+  --id_prompt_output_file data/prompts/id_prompt_mapping.jsonl
+```
+
+---
+
+# Output Files
+
+## Prompt File
+
+```json
+{
+  "system": "",
+  "src": [
+    "prompt text ..."
+  ]
+}
+```
+
+## ID-Prompt Mapping File
+
+```json
+{
+  "id": "1",
+  "prompt": "prompt text ..."
+}
+```
+
+---
+
+# Feature Ablation
+
+You can easily enable or disable different personalized features by modifying the corresponding code sections, including:
+- Recent search history
+- Long-term interests
+- User profile information
+
+This design supports flexible ablation experiments for personalized retrieval and personalized query rewriting research.
+
+---
