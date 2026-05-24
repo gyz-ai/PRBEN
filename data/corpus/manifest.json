@@ -1,1 +1,7 @@
-
+{
+  "dataset": "PRBEN",
+  "format": "jsonl",
+  "field": "contents",
+  "num_shards": 2,
+  "storage": "HF / external download recommended"
+}
