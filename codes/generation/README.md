@@ -97,3 +97,4 @@ Each output sample is formatted as:
 
 ---
 You can easily enable or disable different personalized features (e.g., user profile, search history, behavioral signals) by simply commenting or uncommenting the corresponding code sections.
+The top-5 historical records can be obtained using your own retrieval strategy or semantic similarity methods.
