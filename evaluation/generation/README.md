@@ -285,3 +285,66 @@ Score range:
 rewrite_qwen.jsonl:
 samples=12000, avg_hit_rate=0.7821
 ```
+
+---
+---
+
+## BLEU Evaluation
+
+Run BLEU evaluation:
+
+```bash
+python evaluation/bleu_eval.py \
+  --ref_file data/gold/gold_answers.jsonl \
+  --hyp_file data/generated_answers/rewrite_qwen.jsonl \
+  --output_file results/bleu_scores.json
+```
+
+### Reference File Format
+
+```json
+{
+  "id": "prben_id_00001",
+  "answer": "春秋笔法对应鼠生肖。"
+}
+```
+
+### Generated Answer Format
+
+```json
+{
+  "id": "prben_id_00001",
+  "answer": "春秋笔法通常对应鼠。"
+}
+```
+
+Fields:
+
+- `id`: Sample identifier
+- `answer`: Generated answer text
+
+---
+
+### Metric
+
+BLEU is computed using:
+
+- Word-level BLEU
+- `jieba` Chinese tokenization
+- NLTK sentence BLEU with smoothing
+
+Score range:
+
+- `1.0`: Perfect overlap
+- `0.0`: No overlap
+
+---
+
+### Example Output
+
+```text
+====== BLEU Evaluation ======
+
+samples=12000
+avg_bleu=0.1721
+```
