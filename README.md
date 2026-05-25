@@ -32,7 +32,8 @@ The PRBEN repository is organized into four major components: retrieval, generat
 The `codes/` directory contains the core personalized retrieval and answer generation pipelines.  
 The `data/` directory stores retrieval corpora, user behavior data, gold annotations, and retrieval outputs.  
 The `evaluation/` directory provides both retrieval and generation evaluation scripts, including lexical overlap metrics, personalization consistency metrics, factuality evaluation, and faithfulness scoring.  
-Utility scripts such as BM25 index construction are placed under `scripts/`.
+Utility scripts such as BM25 index construction are placed under `scripts/`.  
+Detailed descriptions, data formats, and usage instructions are provided in the README files inside each subdirectory, allowing users to quickly set up the project and start retrieval and generation evaluation.
 
 ```text
 PRBEN/
