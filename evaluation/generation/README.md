@@ -348,3 +348,55 @@ Score range:
 samples=12000
 avg_bleu=0.1721
 ```
+---
+---
+## ROUGE-L Evaluation
+
+Run ROUGE-L evaluation:
+
+```bash
+python evaluation/compute_rouge.py \
+  --ref_file data/gold_answers.jsonl \
+  --hyp_file data/generated_answers.jsonl
+```
+
+---
+
+### Reference / Hypothesis Format
+
+Both files use `.jsonl` format.
+
+Example:
+
+```json
+{"id": "1001", "answer": "巴黎是法国的首都。"}
+{"id": "1002", "answer": "地球围绕太阳公转。"}
+```
+
+Fields:
+
+- `id`: Sample identifier
+- `answer`: Answer text
+
+---
+
+### Output Example
+
+```text
+Evaluation Samples: 12000
+Average ROUGE-L Precision: 0.301245
+Average ROUGE-L Recall:    0.287631
+Average ROUGE-L F1:        0.294118
+```
+
+---
+
+### Metric Description
+
+The script computes:
+
+- ROUGE-L Precision
+- ROUGE-L Recall
+- ROUGE-L F1
+
+Chinese text is segmented using `jieba` before evaluation.
