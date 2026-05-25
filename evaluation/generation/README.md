@@ -218,3 +218,70 @@ Average entailment probability across all answer-document sentence pairs
 处理文件数: 2
 整体平均 Faithfulness: 0.8497
 ```
+---
+---
+## PTC Evaluation
+
+Run keyword hit rate evaluation:
+
+```bash
+python evaluation/keyword_hit_rate.py \
+  --gold_file data/gold/gold_answers.jsonl \
+  --input_dir data/generated_answers
+```
+
+### Gold File Format
+
+```json
+{
+  "id": "prben_id_00001",
+  "keywords": [
+    "生肖",
+    "春秋笔法",
+    "鼠"
+  ]
+}
+```
+
+Fields:
+
+- `id`: Sample identifier
+- `keywords`: Personalized keyword list
+
+---
+
+### Generated Answer Format
+
+```json
+{
+  "id": "prben_id_00001",
+  "answer": "春秋笔法通常对应鼠生肖。"
+}
+```
+
+Fields:
+
+- `id`: Sample identifier
+- `answer`: Generated answer
+
+---
+
+### Metric
+
+```text
+HitRate = matched_keywords / total_keywords
+```
+
+Score range:
+
+- `1.0`: All keywords matched
+- `0.0`: No keywords matched
+
+---
+
+### Example Output
+
+```text
+rewrite_qwen.jsonl:
+samples=12000, avg_hit_rate=0.7821
+```
