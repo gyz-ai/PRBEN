@@ -75,20 +75,20 @@ The corpus can be downloaded from the following Hugging Face URL:https://hugging
 We evaluated several open-source and closed-source models on our benchmark.
 The following presents a subset of our results：
 
-|Personalized Retrieval | Recall | MRR    | NDCG   | MAP    | Relevance |
+| Personalized Retrieval | Recall | MRR    | NDCG   | MAP    | Relevance |
 |--------------------------------|--------|--------|--------|--------|-----------|
-| **Long History** |        |        |        |        |           |
-| Gemini-1.5-Pro                  | 0.2430 | 0.4538 | 0.2685 | 0.1776 | 0.2005    |
-| DeepSeek-R1                     | 0.2200 | 0.4046 | 0.2424 | 0.1645 | 0.1756    |
-| Qwen-2.5-7B-Instruct-SFT        | 0.2279 | 0.4226 | 0.2506 | 0.1677 | 0.1770    |
-| **Short History** |        |        |        |        |           |
-| Gemini-1.5-Pro                  | 0.2769 | 0.5153 | 0.3076 | 0.2092 | 0.2129    |
-| DeepSeek-R1                     | 0.2664 | 0.4807 | 0.2924 | 0.2008 | 0.2041    |
-| Qwen-2.5-7B-Instruct-SFT        | 0.2884 | 0.5066 | 0.3163 | 0.2200 | 0.1901    |
-| **Long + Short History** |        |        |        |        |           |
-| Gemini-1.5-Pro                  | 0.2780 | 0.5111 | 0.3081 | 0.2106 | 0.2148    |
-| DeepSeek-R1                     | 0.2846 | 0.5085 | 0.3143 | 0.2179 | 0.1964    |
-| Qwen-2.5-7B-Instruct-SFT        | 0.2897 | 0.5159 | 0.3190 | 0.2219 | 0.2009    |
+| **Long History** |
+| Gemini-2.5                  | 0.2455 | 0.1478 | 0.4493 | 0.4358 | 0.2695 |
+| DeepSeek-R1                     | 0.2440 | 0.1464 | 0.4440 | 0.4305 | 0.2671 |
+| Qwen-2.5-7B-Instruct-SFT                        | 0.2472 | 0.1486 | 0.4508 | 0.4375 | 0.2717 |
+| **Short History** |
+| Gemini-2.5                  | 0.2708 | 0.1623 | 0.4827 | 0.4693 | 0.2964 |
+| DeepSeek-R1                     | 0.2638 | 0.1570 | 0.4673 | 0.4543 | 0.2883 |
+| Qwen-2.5-7B-Instruct-SFT                       | 0.2747 | 0.1658 | 0.4889 | 0.4763 | 0.3023 |
+| **Long + Short History** |
+| Gemini-2.5                  | 0.2859 | 0.1721 | 0.5037 | 0.4910 | 0.3130 |
+| DeepSeek-R1                     | 0.2857 | 0.1715 | 0.4979 | 0.4851 | 0.3125 |
+| Qwen-2.5-7B-Instruct-SFT                        | 0.2972 | 0.1794 | 0.5227 | 0.5106 | 0.3272 |
 
 Additionally, we evaluated the models’ performance on the complete end-to-end pipeline.
 The following presents a subset of our results：
