@@ -64,6 +64,7 @@ Score interpretation:
 - `0.0`: Severely incorrect or hallucinated
 
 ---
+---
 
 
 ## PGDC Evaluation
@@ -151,3 +152,69 @@ Score interpretation:
 - `1`: Completely inconsistent with personalized intent and preference
 
 ---
+---
+
+## Faithfulness Evaluation
+
+Run faithfulness evaluation:
+
+```bash
+python evaluation/evaluate_faithfulness.py \
+  --input_dir data/answers \
+  --model_name microsoft/deberta-xlarge-mnli \
+  --batch_size 8
+```
+
+### Input Format
+
+Input files are stored in `.jsonl` format.
+
+Example:
+
+```json
+{
+  "id": "prben_id_00001",
+  "answer": "Paris is the capital of France.",
+  "doc_list": [
+    "Paris is the capital city of France.",
+    "France is located in Europe."
+  ]
+}
+```
+
+Fields:
+
+- `id`: Sample identifier
+- `answer`: Generated answer
+- `doc_list`: Retrieved supporting documents
+
+---
+
+### Faithfulness Scoring
+
+The script computes sentence-level entailment scores between generated answers and retrieved documents using an NLI model.
+
+Default model:
+
+```text
+microsoft/deberta-xlarge-mnli
+```
+
+The final faithfulness score is computed as:
+
+```text
+Average entailment probability across all answer-document sentence pairs
+```
+
+---
+
+### Output Example
+
+```text
+[OK] qwen.jsonl | samples=12000 | avg=0.8421
+[OK] gemini.jsonl | samples=12000 | avg=0.8574
+
+====== Faithfulness Evaluation ======
+处理文件数: 2
+整体平均 Faithfulness: 0.8497
+```
