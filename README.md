@@ -26,7 +26,62 @@ The basic statistics of PRBEN dataset shows as follow:
 | Age range                      | 0–65+                     |
 | Number of provinces/regions      | 32                        |
 
+## Project Structure
 
+The PRBEN repository is organized into four major components: retrieval, generation, evaluation, and datasets.  
+The `codes/` directory contains the core personalized retrieval and answer generation pipelines.  
+The `data/` directory stores retrieval corpora, user behavior data, gold annotations, and retrieval outputs.  
+The `evaluation/` directory provides both retrieval and generation evaluation scripts, including lexical overlap metrics, personalization consistency metrics, factuality evaluation, and faithfulness scoring.  
+Utility scripts such as BM25 index construction are placed under `scripts/`.
+
+```text
+PRBEN/
+├── codes/
+│   ├── retrieval/
+│   │   ├── bm25_retriever.py
+│   │   └── retrieval_prompt.py
+│   │
+│   └── generation/
+│       └── generation_prompt.py
+│
+├── scripts/
+│   └── build_bm25_index.sh
+│
+├── data/
+│   ├── corpus/
+│   │   ├── download.sh
+│   │   └── manifest.json
+│   │
+│   ├── gold/
+│   │   ├── D_star.jsonl
+│   │   └── Y_star.jsonl
+│   │
+│   ├── user_data/
+│   │   ├── user_click_url.jsonl
+│   │   ├── user_history_part1.jsonl
+│   │   ├── user_history_part2.jsonl
+│   │   ├── user_history_part3.jsonl
+│   │   ├── user_profile.jsonl
+│   │   └── user_query.jsonl
+│   │
+│   └── retrieval_results/
+│
+├── evaluation/
+│   ├── retrieval/
+│   │   └── retrieval_val.py
+│   │
+│   └── generation/
+│       ├── BLEU.py
+│       ├── PGDC.py
+│       ├── PTC.py
+│       ├── ROUGEL.py
+│       ├── factuality.py
+│       └── faithfulness.py
+│
+├── requirements.txt
+└── README.md
+```
+<!--
 ## Data Content and Format
 The folder PRBEN will contain three files: user_data.jsonl , data_gold_target.jsonl and prompt.py.
 
@@ -70,6 +125,7 @@ This corpus contains 2,341,338 base documents, all sourced from real online Baid
 - contents: the textual content of the document.
   
 The corpus can be downloaded from the following Hugging Face URL:https://huggingface.co/datasets/gyz-ai/PRBEN
+-->
 
 ## Baseline models
 We evaluated several open-source and closed-source models on our benchmark.
