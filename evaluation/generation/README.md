@@ -1,4 +1,4 @@
-## Evaluation
+## Factuality Evaluation
 
 Run factual correctness prompt generation:
 
@@ -64,5 +64,3 @@ Score interpretation:
 - `0.0`: Severely incorrect or hallucinated
 
 ---
-
-
