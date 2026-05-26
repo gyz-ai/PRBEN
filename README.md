@@ -1,7 +1,7 @@
 # PRBEN
 Personalized RAG in the Wild: Benchmarking Personalized RAG with Authentic User Behavioral Signals
 ## Introduction
-We introduce PRBEN, a new benchmark based on the popular Chinese search engine. PRBEN includes 800 users, whose historical queries, click logs, and profile information were collected over a three-month period. In this dataset, we record users’ real queries and all clicked URLs along with their associated attributes, covering diverse topics and query types. Using our construction method, we generated a gold-standard reference that reflects users’ personalized needs, providing an evaluable benchmark for research on personalized retrieval and generation methods.
+We introduce PRBEN, a new benchmark based on the popular Chinese search engine. PRBEN includes 10408 users, whose historical queries, click logs, and profile information were collected over a three-month period. In this dataset, we record users’ real queries and all clicked URLs along with their associated attributes, covering diverse topics and query types. Using our construction method, we generated a gold-standard reference that reflects users’ personalized needs, providing an evaluable benchmark for research on personalized retrieval and generation methods.
 <!-- <p align="center">
 <img src="https://github.com/user-attachments/assets/3619af74-d323-46da-ad7b-60a0953d1c56" width="600" height="320" />
 </p> -->
