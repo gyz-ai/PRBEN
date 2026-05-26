@@ -8,10 +8,10 @@ We introduce PRBEN, a new benchmark based on the popular Chinese search engine. 
 <!-- <p align="center">
 <img src="https://github.com/user-attachments/assets/3619af74-d323-46da-ad7b-60a0953d1c56" width="600" height="320" />
 </p> -->
-<p align="center">
-<img width="800" height="400" alt="PRBEN" src="https://github.com/user-attachments/assets/10a87630-5a6c-4cf1-9302-edebe50bc379" />
-</p>
-
+<!-- <p align="center">
+<img width="800" height="400" alt="PRBEN" src="https://github.com/user-attachments/assets/312d7c10-32b0-4f99-acec-5211bac7196b" />
+</p> -->
+<img width="2226" height="1013" alt="PRBEN" src="https://github.com/user-attachments/assets/a85549d5-157d-4807-a57a-040cc0125a5f" />
 
 The dataset is derived from anonymized search logs. To protect user privacy, we applied 𝑘-anonymity filtering (k=5) and masked all personally identifiable information (PII) using named entity recognition (NER). The dataset is released under a strict research-only license, and any attempts to re-identify users are strictly prohibited.
 
@@ -129,37 +129,48 @@ The corpus can be downloaded from the following Hugging Face URL:https://hugging
 -->
 
 ## Baseline models
-We evaluated several open-source and closed-source models on our benchmark.
-The following presents a subset of our results：
+We evaluate several open-source and closed-source models on our benchmark. 
+The following presents a subset of the results at @10.
 
-| Personalized Retrieval | Recall | MRR    | NDCG   | MAP    | Relevance |
-|--------------------------------|--------|--------|--------|--------|-----------|
+| Personalized Retrieval | Recall@10 | MRR@10 | NDCG@10 | MAP | Relevance |
+|--------------------------------|-----------|--------|---------|------|-----------|
+| **Non-Personalized Retrieval** |
+| BM25                          | 0.1902 | 0.3746 | 0.2070 | 0.1218 | 0.0519 |
+| Q2D                           | 0.0459 | 0.1273 | 0.0514 | 0.0220 | 0.0796 |
+| BART                          | 0.1837 | 0.3619 | 0.1997 | 0.1171 | 0.0390 |
+| Gemini-2.5                    | 0.1541 | 0.3129 | 0.1691 | 0.0997 | 0.0833 |
+| DeepSeek-R1                   | 0.1726 | 0.3499 | 0.1901 | 0.1123 | 0.0727 |
+| Qwen-2.5-7B-Instruct         | 0.1547 | 0.3220 | 0.1702 | 0.0980 | 0.0281 |
 | **Long History** |
-| Gemini-2.5                  | 0.2455 | 0.1478 | 0.4493 | 0.4358 | 0.2695 |
-| DeepSeek-R1                     | 0.2440 | 0.1464 | 0.4440 | 0.4305 | 0.2671 |
-| Qwen-2.5-7B-Instruct-SFT                        | 0.2472 | 0.1486 | 0.4508 | 0.4375 | 0.2717 |
+| Gemini-2.5                    | 0.2455 | 0.4493 | 0.2695 | 0.1807 | 0.0902 |
+| DeepSeek-R1                   | 0.2440 | 0.4440 | 0.2671 | 0.1788 | 0.0665 |
+| Qwen-2.5-7B-Instruct-SFT     | 0.2472 | 0.4508 | 0.2717 | 0.1843 | 0.0857 |
 | **Short History** |
-| Gemini-2.5                  | 0.2708 | 0.1623 | 0.4827 | 0.4693 | 0.2964 |
-| DeepSeek-R1                     | 0.2638 | 0.1570 | 0.4673 | 0.4543 | 0.2883 |
-| Qwen-2.5-7B-Instruct-SFT                       | 0.2747 | 0.1658 | 0.4889 | 0.4763 | 0.3023 |
+| Gemini-2.5                    | 0.2708 | 0.4827 | 0.2964 | 0.2032 | 0.0827 |
+| DeepSeek-R1                   | 0.2638 | 0.4673 | 0.2883 | 0.1986 | 0.0597 |
+| Qwen-2.5-7B-Instruct-SFT     | 0.2747 | 0.4889 | 0.3023 | 0.2117 | 0.0778 |
 | **Long + Short History** |
-| Gemini-2.5                  | 0.2859 | 0.1721 | 0.5037 | 0.4910 | 0.3130 |
-| DeepSeek-R1                     | 0.2857 | 0.1715 | 0.4979 | 0.4851 | 0.3125 |
-| Qwen-2.5-7B-Instruct-SFT                        | 0.2972 | 0.1794 | 0.5227 | 0.5106 | 0.3272 |
+| Gemini-2.5                    | 0.2859 | 0.5037 | 0.3130 | 0.2175 | 0.0867 |
+| DeepSeek-R1                   | 0.2857 | 0.4979 | 0.3125 | 0.2191 | 0.0585 |
+| Qwen-2.5-7B-Instruct-SFT     | 0.2972 | 0.5227 | 0.3272 | 0.2317 | 0.0828 |
+| **User Attributes** |
+| Gemini-2.5                    | 0.2032 | 0.3929 | 0.2236 | 0.1416 | 0.0845 |
+| DeepSeek-R1                   | 0.1820 | 0.3541 | 0.1998 | 0.1239 | 0.0529 |
+| Qwen-2.5-7B-Instruct-SFT     | 0.1905 | 0.3697 | 0.2099 | 0.1322 | 0.0815 |
 
 Additionally, we evaluated the models’ performance on the complete end-to-end pipeline.
 The following presents a subset of our results：
 
 | Method | BLEU    | ROUGE-L  | PGDC     | PTC      | Faithfulness | Factuality |
 |--------|---------|----------|----------|----------|--------------|------------|
-| dp (P-P)     | 0.0622 | 0.2064 | 0.8018 | 0.4361 | 0.6094 | 0.7304 |
-| qw (P-P)     | 0.0549 | 0.1883 | 0.5601 | 0.2997 | 0.6697 | 0.5672 |
-| gemini (P-P) | 0.1315 | 0.2686 | 0.7556 | 0.5697 | 0.6123 | 0.8060 |
+|DeepSeek-R1(P-P)     | 0.0622 | 0.2064 | 0.8018 | 0.4361 | 0.6094 | 0.7304 |
+| Qwen-2.5-7B-Instruct(P-P)     | 0.0549 | 0.1883 | 0.5601 | 0.2997 | 0.6697 | 0.5672 |
+| Gemini-2.5(P-P) | 0.1315 | 0.2686 | 0.7556 | 0.5697 | 0.6123 | 0.8060 |
 
-<img width="700" height="250" alt="3151770979516_ pic" src="https://github.com/user-attachments/assets/e6ebb75e-ae4f-4c33-9806-bedf88685d6c" />
+---
 
+<img width="1209" height="312" alt="bar-simple" src="https://github.com/user-attachments/assets/720b9ee7-8969-4ef0-9c38-ee616708bab6" />
 
-  
 ### License
 This repository is liciensed under Apache-2.0 License.
 
